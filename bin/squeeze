@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'squeeze/runner'
+Squeeze::Runner.new(ARGV)

@@ -26,7 +26,7 @@ Create container template first:
 
 Run `ifconfig` concurrently in 4 containers:
 
-    squeeze -n 4 -t squeeze-template-ubuntu -c ifconfig
+    squeeze -n 4 -t squeeze-template-ubuntu -- ifconfig
 
 
 Trying development version
@@ -37,5 +37,5 @@ You can find Vagrantfile with url to Ubuntu machine I use. To get it running:
     vagrant up
     vagrant ssh
 
-Binary can be found at `/vagrant/squeeze/bin/squeeze`. Remember to install prerequisites.
+Run binary as `RUBYLUB=/vagrant/squeeze /vagrant/squeeze/bin/squeeze`. Remember to satisfy prerequisites.
 
