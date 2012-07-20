@@ -1,29 +1,41 @@
-# Squeeze
+Squeeze
+=======
 
-TODO: Write a gem description
+Run commands in isolated, one-time LXC containers.
 
-## Installation
 
-Add this line to your application's Gemfile:
+Prerequisites
+-------------
 
-    gem 'squeeze'
+- Linux operating system
+- kernel with LXC and AUFS support
+- lxc tools
 
-And then execute:
+On Ubuntu Precise vanilla distro this is satisfied by just:
 
-    $ bundle
+    sudo apt-get install lxc
+    sudo modprobe aufs
 
-Or install it yourself as:
 
-    $ gem install squeeze
+Example usage
+-------------
 
-## Usage
+Create container template first:
 
-TODO: Write usage instructions here
+    sudo lxc-create -n squeeze-template-ubuntu -t ubuntu
 
-## Contributing
+Run `ifconfig` concurrently in 4 containers:
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+    squeeze -n 4 -t squeeze-template-ubuntu -c ifconfig
+
+
+Trying development version
+--------------------------
+
+You can find Vagrantfile with url to Ubuntu machine I use. To get it running:
+
+    vagrant up
+    vagrant ssh
+
+Binary can be found at `/vagrant/squeeze/bin/squeeze`. Remember to install prerequisites.
+
