@@ -1,8 +1,7 @@
 Squeeze
 =======
 
-Run commands in isolated, one-time LXC containers.
-
+Proof of concept code spike to run commands in isolated, one-time LXC containers.
 
 Prerequisites
 -------------
